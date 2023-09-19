@@ -5,6 +5,10 @@ public class pilas{
         pila1.push(1);
         pila1.push(1);
         pila1.push(1);
+
+        for(int i = 0; i<=4;i++){
+            System.out.println(pila1[i]); //dará error puesto que pila1 no es un arreglo, no tiene indices
+        }
     }
 }
 
