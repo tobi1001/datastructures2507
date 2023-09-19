@@ -2,6 +2,9 @@ public class pilas{
     public static void main(String[] args){
         Sarray<Integer> pila1= new Sarray<>();
         pila1.push(1);
+        pila1.push(1);
+        pila1.push(1);
+        pila1.push(1);
     }
 }
 
