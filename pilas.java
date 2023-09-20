@@ -2,10 +2,9 @@ public class pilas{
     public static void main(String[] args){
         Sarray<Integer> pila1= new Sarray<>();
         pila1.push(1);
-        System.out.println(pila1.sarray[0]); //Visualizar la posicion 0 del sarray, ya veremos que pasa al unir master y testssarray 
-        pila1.push(1);
-        pila1.push(1);
-        pila1.push(1);
+        pila1.push(2);
+        pila1.push(3);
+        pila1.push(4);
     }
 }
 
@@ -14,7 +13,7 @@ public class pilas{
 class Sarray<T>{
 
     private int top;//indica la posicion en donde se insertará un elemento
-    T[] sarray;
+    private T[] sarray;
 
 
     Sarray(int i){
