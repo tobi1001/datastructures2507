@@ -1,8 +1,8 @@
 public class pilas{
     public static void main(String[] args){
         Sarray<Integer> pila1= new Sarray<>();
-        pila1.push(1);
-        pila1.push(2);
+        pila1.push(1); // se pushean numeros del 1 al 4, limite de la pila
+        pila1.push(2); //cambio ligero para el push para github
         pila1.push(3);
         pila1.push(4);
     }
