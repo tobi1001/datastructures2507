@@ -1,28 +1,20 @@
 public class herencia {
     public static void main(String[] args){
-    Sarray<Integer> cola1 = new Sarray<>();
-    cola1.push(1);
-    cola1.push(2);
-    System.out.println(cola1.pop());
-    cola1.push(1);
-    cola1.push(2);
-    System.out.println(cola1.pop());
-    System.out.println(cola1.pop());
-    System.out.println(cola1.pop());
-    cola1.push(2);
-    System.out.println(cola1.pop());
-    // Node<Integer> i = new Node<>(0);
-    // i = cola1.head;
-    // while(i != null){
-    //     System.out.println(i.key);
-    //     i = i.next;
-    // }
+    ListStack<Integer> stack = new ListStack<>();
+    stack.push(2);
+    stack.push(6);
+    stack.push(7);
+    stack.push(76);
+    Node<Integer> i = new Node<>(0);
+    i = stack.head;
+    while(i != null){
+        System.out.println(i.key);
+        i = i.next;
+    }
     System.out.println("-----------------");
     //PRUEBAS
     }
 }
-
-
 
 class Node<T>{
     
@@ -173,10 +165,10 @@ class LinkedList<T>{
 }
 
 
-class Qarray<T> extends LinkedList<T>{
+class ListQueue<T> extends LinkedList<T>{
     private int count;
 
-    Qarray(){                       //El array por defecto tiene head y tail = 0, la cola tendrá i espacios para elementos
+    ListQueue(){                       //El array por defecto tiene head y tail = 0, la cola tendrá i espacios para elementos
         super();
         count = 0;      
     }
@@ -200,11 +192,11 @@ class Qarray<T> extends LinkedList<T>{
 
 }
 
-class Sarray<T> extends LinkedList<T>{
+class ListStack<T> extends LinkedList<T>{
     
     private int top;                   //Indica la posicion en donde se insertará un elemento
 
-    Sarray(){
+    ListStack(){
         super();
         top = 0;                       //La posición inicial de los elementos será 0
     }
@@ -325,6 +317,18 @@ class DLinkedList<T>{
         nodo.next = current;
         nodo.prev = current.prev;
         current.prev = nodo;
+    }
+
+    public boolean find(T keytofind){
+        DNode<T> nodo = head;
+        while(nodo != null){
+            if(nodo.key == keytofind){
+                return true;
+            }
+            nodo = nodo.next;
+        }
+        return false;
+
     }
 
     public boolean empty(){
