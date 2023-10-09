@@ -1,16 +1,17 @@
 public class herencia {
     public static void main(String[] args){
-    ListStack<Integer> stack = new ListStack<>();
-    stack.push(2);
-    stack.push(6);
-    stack.push(7);
-    stack.push(76);
-    Node<Integer> i = new Node<>(0);
+    DLinkedList<Integer> stack = new DLinkedList<>();
+    stack.pushBack(2);
+    stack.pushBack(6);
+    stack.pushBack(7);
+    stack.pushBack(76);
+    DNode<Integer> i = new DNode<>(0);
     i = stack.head;
     while(i != null){
         System.out.println(i.key);
         i = i.next;
     }
+    System.out.println(stack.find(4));
     System.out.println("-----------------");
     //PRUEBAS
     }
@@ -257,8 +258,8 @@ class DNode<T>{
 }
 
 class DLinkedList<T>{
-    private DNode<T> head;
-    private DNode<T> tail;
+    protected DNode<T> head;
+    protected DNode<T> tail;
 
     public DLinkedList(){
         head = null;
@@ -287,11 +288,14 @@ class DLinkedList<T>{
 
     public void pushBack(T element){
         DNode<T> nodo = new DNode<>(element);
-        tail.next = nodo;
-        nodo.prev = tail;
-        tail = nodo;
-        if(head == null)
-            head = tail;
+        if(tail == null){
+            head = tail = nodo;
+        }
+        else{
+            tail.next = nodo;
+            nodo.prev = tail;
+            tail = nodo;
+        }
     }
 
     public T popBack(){
@@ -328,7 +332,6 @@ class DLinkedList<T>{
             nodo = nodo.next;
         }
         return false;
-
     }
 
     public boolean empty(){
