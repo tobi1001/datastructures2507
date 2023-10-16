@@ -1,3 +1,4 @@
+package src.main.java;
 public class herencia {
     public static void main(String[] args){
     DLinkedList<Integer> stack = new DLinkedList<>();

@@ -1,0 +1,11 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>Tobi</groupId>
+    <artifactId>Estructuras</artifactId>
+    <version>1.0.0</version>
+    <name>AC</name>
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <outputDirectory>target/classes</outputDirectory>
+    </build>
+</project>
