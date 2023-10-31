@@ -1,25 +1,3 @@
-import java.util.Scanner;
-import java.util.StringTokenizer;
-public class arboles{
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        String entrada = sc.nextLine();
-        StringTokenizer tokenizer = new StringTokenizer(entrada);
-        BT arbol = new BT();
-
-        while (tokenizer.hasMoreTokens()) {
-            int valor = Integer.parseInt(tokenizer.nextToken());
-            arbol.insert(valor);
-        }
-
-        int k = Integer.parseInt(sc.nextLine());
-
-        arbol.findSmall(k);
-        sc.close();
-    }
-}
-
 class TNode {
     int value;
     TNode left;
